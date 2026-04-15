@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="250" viewBox="0 0 800 250">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="50%" style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="50%" style="stop-color:#bc8cff"/>
+      <stop offset="100%" style="stop-color:#ff7b72"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="250" fill="url(#bg)" rx="12"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.05" stroke="#58a6ff" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="100" y1="0" x2="100" y2="250"/>
+    <line x1="200" y1="0" x2="200" y2="250"/>
+    <line x1="300" y1="0" x2="300" y2="250"/>
+    <line x1="400" y1="0" x2="400" y2="250"/>
+    <line x1="500" y1="0" x2="500" y2="250"/>
+    <line x1="600" y1="0" x2="600" y2="250"/>
+    <line x1="700" y1="0" x2="700" y2="250"/>
+  </g>
+
+  <!-- Hex bytes decoration -->
+  <text x="30" y="40" font-family="Consolas,monospace" font-size="10" fill="#58a6ff" opacity="0.15">49 89 CA B8 ?? ?? ?? ?? 0F 05 C3</text>
+  <text x="500" y="40" font-family="Consolas,monospace" font-size="10" fill="#bc8cff" opacity="0.15">FF 25 00 00 00 00 ?? ?? ?? ?? ?? ?? ?? ??</text>
+  <text x="80" y="230" font-family="Consolas,monospace" font-size="10" fill="#ff7b72" opacity="0.15">4C 8B D1 B8 ?? ?? ?? ?? 0F 05 C3</text>
+  <text x="450" y="230" font-family="Consolas,monospace" font-size="10" fill="#58a6ff" opacity="0.12">NtProtectVirtualMemory → PAGE_EXECUTE_READ</text>
+
+  <!-- Main title -->
+  <text x="400" y="105" font-family="Segoe UI,Arial,sans-serif" font-size="48" font-weight="bold" fill="url(#accent)" text-anchor="middle" filter="url(#glow)">stealth_call</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="140" font-family="Segoe UI,Arial,sans-serif" font-size="16" fill="#8b949e" text-anchor="middle">indirect syscall engine for Windows x64</text>
+
+  <!-- Tags -->
+  <g transform="translate(400, 175)" text-anchor="middle">
+    <rect x="-380" y="-12" width="90" height="22" rx="11" fill="#1f6feb" opacity="0.3"/>
+    <text x="-335" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#58a6ff">zero imports</text>
+
+    <rect x="-278" y="-12" width="70" height="22" rx="11" fill="#8957e5" opacity="0.3"/>
+    <text x="-243" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#bc8cff">zero CRT</text>
+
+    <rect x="-196" y="-12" width="105" height="22" rx="11" fill="#da3633" opacity="0.3"/>
+    <text x="-143" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#ff7b72">indirect syscall</text>
+
+    <rect x="-79" y="-12" width="60" height="22" rx="11" fill="#1f6feb" opacity="0.3"/>
+    <text x="-49" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#58a6ff">W^X</text>
+
+    <rect x="-7" y="-12" width="85" height="22" rx="11" fill="#8957e5" opacity="0.3"/>
+    <text x="35" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#bc8cff">VEH anti-BP</text>
+
+    <rect x="90" y="-12" width="100" height="22" rx="11" fill="#da3633" opacity="0.3"/>
+    <text x="140" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#ff7b72">AMSI/ETW bypass</text>
+
+    <rect x="202" y="-12" width="85" height="22" rx="11" fill="#1f6feb" opacity="0.3"/>
+    <text x="244" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#58a6ff">header-only</text>
+
+    <rect x="299" y="-12" width="75" height="22" rx="11" fill="#8957e5" opacity="0.3"/>
+    <text x="337" y="4" font-family="Segoe UI,sans-serif" font-size="11" fill="#bc8cff">anti-dump</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="240" width="600" height="2" fill="url(#accent)" rx="1" opacity="0.4"/>
+</svg>
